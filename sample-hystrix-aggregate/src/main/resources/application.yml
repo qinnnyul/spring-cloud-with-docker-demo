@@ -10,12 +10,12 @@ sampleservice:
 
 hystrix:
   command:
-    RemoteMessageClientCommand:
+    MessageAnnotationHystrixCommand:
       execution:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
-    RemoteMessageAnnotationClient:
+    MessageHystrixCommand:
       execution:
         isolation:
           thread:
