@@ -3,8 +3,8 @@ server:
   port: 8761
 
 eureka:
-  server:
-    enable-self-preservation: true
+  instance:
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    registerWithEureka: false
+    fetchRegistry: false
