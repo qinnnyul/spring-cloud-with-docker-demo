@@ -24,10 +24,10 @@ public class MessageController {
     }
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
-    public DeferredResult<MessageAcknowledgement> pongMessage(@RequestBody Message input) {
+    public DeferredResult<MessageAcknowledgement> sendMessage(@RequestBody Message input) {
         DeferredResult<MessageAcknowledgement> deferred = new DeferredResult<>();
         this.messageHandlerService.handleMessage(input)
-                .subscribe(m -> deferred.setResult(m), e -> deferred.setErrorResult(e));
+                .subscribe(res -> deferred.setResult(res), e -> deferred.setErrorResult(e));
 
         return deferred;
     }

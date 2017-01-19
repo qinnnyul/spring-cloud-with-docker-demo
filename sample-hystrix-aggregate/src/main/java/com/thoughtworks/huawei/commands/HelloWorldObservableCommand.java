@@ -1,4 +1,4 @@
-package agg.samples.commands.obs;
+package com.thoughtworks.huawei.commands;
 
 
 import com.netflix.hystrix.HystrixCommandGroupKey;

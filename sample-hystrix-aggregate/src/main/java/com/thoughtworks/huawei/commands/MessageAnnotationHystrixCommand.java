@@ -1,25 +1,25 @@
-package agg.samples.commands.remote;
+package com.thoughtworks.huawei.commands;
 
-import agg.samples.domain.Message;
-import agg.samples.domain.MessageAcknowledgement;
-import agg.samples.feign.RemoteServiceClient;
+import com.thoughtworks.huawei.domain.Message;
+import com.thoughtworks.huawei.domain.MessageAcknowledgement;
+import com.thoughtworks.huawei.service.MessageSender;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RemoteMessageAnnotationClient  {
+public class MessageAnnotationHystrixCommand {
 
-    private final RemoteServiceClient remoteServiceClient;
+    private final MessageSender messageSender;
 
     @Autowired
-    public RemoteMessageAnnotationClient(RemoteServiceClient remoteServiceClient) {
-        this.remoteServiceClient = remoteServiceClient;
+    public MessageAnnotationHystrixCommand(MessageSender messageSender) {
+        this.messageSender = messageSender;
     }
 
     @HystrixCommand(fallbackMethod = "defaultMessage", commandKey = "RemoteMessageAnnotationClient" )
     public MessageAcknowledgement sendMessage(Message message) {
-        return this.remoteServiceClient.sendMessage(message);
+        return this.messageSender.sendMessage(message);
     }
 
     public MessageAcknowledgement defaultMessage(Message message) {

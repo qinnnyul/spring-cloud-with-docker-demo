@@ -1,30 +1,30 @@
-package agg.samples.commands.remote;
+package com.thoughtworks.huawei.commands;
 
-import agg.samples.domain.Message;
-import agg.samples.domain.MessageAcknowledgement;
-import agg.samples.feign.RemoteServiceClient;
+import com.thoughtworks.huawei.domain.Message;
+import com.thoughtworks.huawei.domain.MessageAcknowledgement;
+import com.thoughtworks.huawei.service.MessageSender;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class RemoteMessageClientCommand extends HystrixCommand<MessageAcknowledgement> {
+public class MessageHystrixCommand extends HystrixCommand<MessageAcknowledgement> {
     private static final String COMMAND_GROUP = "demo";
-    private static final Logger logger = LoggerFactory.getLogger(RemoteMessageClientCommand.class);
+    private static final Logger logger = LoggerFactory.getLogger(MessageHystrixCommand.class);
 
-    private final RemoteServiceClient remoteServiceClient;
+    private final MessageSender messageSender;
     private final Message message;
 
-    public RemoteMessageClientCommand(RemoteServiceClient remoteServiceClient, Message message) {
+    public MessageHystrixCommand(MessageSender messageSender, Message message) {
         super(HystrixCommandGroupKey.Factory.asKey(COMMAND_GROUP));
-        this.remoteServiceClient = remoteServiceClient;
+        this.messageSender = messageSender;
         this.message = message;
     }
 
     @Override
     protected MessageAcknowledgement run() throws Exception {
         logger.info("About to make Remote Call");
-        return this.remoteServiceClient.sendMessage(this.message);
+        return this.messageSender.sendMessage(this.message);
     }
 
     @Override
