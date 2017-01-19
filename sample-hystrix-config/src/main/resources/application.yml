@@ -8,3 +8,14 @@ spring:
 
 server:
   port: 8888
+
+sensitive:
+  data: '{cipher}AQArGlKeNl2GMx2tnS94sepcQIUlXQ0rLYmYpd0hkX3p/h6TU+BIZVOq7YW3XnixqF0ck2E+6kJeD6WvifJwwwdSbEVl1RJPoyfD5/dkw6gWvSARpEENkCB8eWfRxPluQmeFmUEIigoEA3Ej2khxFy1Jd+3spZy9PkrXR9Z4frVgWLxb4CXAOqIhNCuMlVTM2Bsd5hzoMRYe3T+rVXaBYXCl9zprSDl72KIuLMmp+PyDrCsj8rnDCS7ITBbVsmWoAsF0wi1SOvwb0qk/Go54w9W6ammJLy8YEr7L/hrXp+xsQ4qdM2Y7qKP5I1+YZA2N9pPtobnoRu6MBNaRLZiY8tYkmkrg3o34Ae7vdVzpKgXmFVFCkMkpmrYW76aaRu438zg='
+
+encrypt:
+  fail-on-error: false
+  key-store:
+    location: classpath:keystore.jks
+    password: ${KEYSTORE_PASSWORD:ley38dk}
+    alias: configserver
+    secret: changeme

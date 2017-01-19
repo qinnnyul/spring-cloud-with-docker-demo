@@ -6,5 +6,5 @@ ADD runboot.sh /app/
 RUN bash -c 'touch /app/app.jar'
 WORKDIR /app
 RUN chmod a+x runboot.sh
-EXPOSE 8080
+EXPOSE 8082
 CMD /app/runboot.sh

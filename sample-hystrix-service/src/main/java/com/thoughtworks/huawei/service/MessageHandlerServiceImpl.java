@@ -1,7 +1,7 @@
-package org.bk.sample.service;
+package com.thoughtworks.huawei.service;
 
-import org.bk.sample.domain.Message;
-import org.bk.sample.domain.MessageAcknowledgement;
+import com.thoughtworks.huawei.domain.MessageAcknowledgement;
+import com.thoughtworks.huawei.domain.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

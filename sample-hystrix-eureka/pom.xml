@@ -19,7 +19,7 @@
     </parent>
 
     <properties>
-        <start-class>org.bk.eureka.EurekaApplication</start-class>
+        <start-class>com.thoughtworks.huawei.EurekaApplication</start-class>
     </properties>
 
     <dependencies>

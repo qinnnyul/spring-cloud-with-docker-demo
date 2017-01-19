@@ -8,7 +8,18 @@ spring:
 
 eureka:
   instance:
-    nonSecurePort: ${server.port:8080}
+    status-page-url-path: /health
+    non-secure-port: ${server.port:8080}
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+
+#zuul:
+#  routes:
+#    service-a:
+#      path: /proxy/service-a/**
+#      serviceId: service-a
+#    service-b:
+#      path: /proxy/service-b/**
+#      serviceId: service-b
+

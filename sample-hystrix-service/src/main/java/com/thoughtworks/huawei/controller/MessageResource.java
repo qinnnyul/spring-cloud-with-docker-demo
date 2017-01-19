@@ -1,12 +1,10 @@
-package org.bk.sample.controller;
+package com.thoughtworks.huawei.controller;
 
 
-import org.bk.sample.domain.Message;
-import org.bk.sample.domain.MessageAcknowledgement;
-import org.bk.sample.service.MessageHandlerService;
+import com.thoughtworks.huawei.domain.Message;
+import com.thoughtworks.huawei.domain.MessageAcknowledgement;
+import com.thoughtworks.huawei.service.MessageHandlerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.hateoas.Resource;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
 
 @RestController
-public class MessageController {
+public class MessageResource {
 
     private final MessageHandlerService messageHandlerService;
 
     @Autowired
-    public MessageController(MessageHandlerService messageHandlerService) {
+    public MessageResource(MessageHandlerService messageHandlerService) {
         this.messageHandlerService = messageHandlerService;
     }
 

@@ -8,5 +8,17 @@ turbine:
     clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
   appConfig: SAMPLE-HYSTRIX-AGGREGATE
 
+#turbine:
+#  aggregator:
+#    clusterConfig: huawei-cloud
+#  instanceInsertPort:
+#    huawei-cloud: false
+#  instanceUrlSuffix:
+#    huawei-cloud: /hystrix.stream
+#  ConfigPropertyBasedDiscovery:
+#    huawei-cloud:
+#      instances: localhost:1111,localhost:2222
+#
+
 logging:
   level: INFO
