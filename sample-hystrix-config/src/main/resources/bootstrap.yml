@@ -4,6 +4,10 @@ spring:
     name: sample-hystrix-config
   profiles:
     active: native
+  config:
+    server:
+      native:
+        searchLocations: classpath:/config
 
 eureka:
   instance:
@@ -22,3 +26,5 @@ encrypt:
     password: ${KEYSTORE_PASSWORD:ley38dk}
     alias: configserver
     secret: changeme
+
+
