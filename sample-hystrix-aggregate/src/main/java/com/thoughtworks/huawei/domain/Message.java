@@ -10,10 +10,6 @@ public class Message {
     private boolean throwException;
     private int delayBy = 0;
 
-    public Message() {
-        //
-    }
-
     @JsonCreator
     public Message(@JsonProperty("id") String id,
                    @JsonProperty("payload") String payload,

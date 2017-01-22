@@ -21,13 +21,13 @@ public class LoggingAspect {
     @Autowired
     private Environment env;
 
-    @Pointcut("within(com.thoughtworks.huawei.commands..*) || within(com.thoughtworks.huawei.service..*) || within(ccom.thoughtworks.huawei.controller..*)")
+    @Pointcut("within(com.thoughtworks.huawei..*)")
     public void loggingPointcut() {
     }
 
     @AfterThrowing(pointcut = "loggingPointcut()", throwing = "e")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
-        if (env.acceptsProfiles("dev")) {
+        if (env.acceptsProfiles("docker")) {
             log.error("Exception in {}.{}() with cause = {} and exception {}", joinPoint.getSignature().getDeclaringTypeName(),
                     joinPoint.getSignature().getName(), e.getCause(), e);
         } else {

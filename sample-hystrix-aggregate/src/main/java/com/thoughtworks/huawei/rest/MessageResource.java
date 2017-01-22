@@ -1,4 +1,4 @@
-package com.thoughtworks.huawei.controller;
+package com.thoughtworks.huawei.rest;
 
 import com.thoughtworks.huawei.commands.MessageHystrixCommand;
 import com.thoughtworks.huawei.domain.Message;
