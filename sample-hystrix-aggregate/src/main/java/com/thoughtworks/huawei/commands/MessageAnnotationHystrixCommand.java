@@ -17,7 +17,7 @@ public class MessageAnnotationHystrixCommand {
         this.messageSender = messageSender;
     }
 
-    @HystrixCommand(fallbackMethod = "defaultMessage", commandKey = "DownstreamServiceMonitoringDemo" )
+    @HystrixCommand(fallbackMethod = "defaultMessage", commandKey = "MessageAnnotationHystrixCommand" )
     public MessageAcknowledgement sendMessage(Message message) {
         return this.messageSender.sendMessage(message);
     }

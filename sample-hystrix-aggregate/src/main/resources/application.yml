@@ -10,19 +10,21 @@ sampleservice:
 
 hystrix:
   command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 1
+        sleepWindowInMilliseconds: 5000
     MessageAnnotationHystrixCommand:
       execution:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
       circuitBreaker:
-        requestVolumeThreshold: 4
-        sleepWindowInMilliseconds: 5000
-    MessageHystrixCommand:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 10000
-      circuitBreaker:
-        requestVolumeThreshold: 4
+        enabled: true
+        requestVolumeThreshold: 1
         sleepWindowInMilliseconds: 5000
