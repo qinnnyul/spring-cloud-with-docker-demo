@@ -6,7 +6,7 @@ server:
 turbine:
   aggregator:
     clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
-  appConfig: SAMPLE-HYSTRIX-AGGREGATE, SAMPLE-HYSTRIX-GATEWAY
+  appConfig: SAMPLE-HYSTRIX-AGGREGATE,SAMPLE-HYSTRIX-GATEWAY
 
 #turbine:
 #  aggregator:
