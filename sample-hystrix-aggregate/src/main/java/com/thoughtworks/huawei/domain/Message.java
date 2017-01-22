@@ -7,11 +7,7 @@ public class Message {
 
     private String id;
     private String payload;
-
-    @JsonProperty("throw_exception")
     private boolean throwException;
-
-    @JsonProperty("delay_by")
     private int delayBy = 0;
 
     public Message() {
@@ -21,8 +17,8 @@ public class Message {
     @JsonCreator
     public Message(@JsonProperty("id") String id,
                    @JsonProperty("payload") String payload,
-                   @JsonProperty("throw_exception") boolean throwException,
-                   @JsonProperty("delay_by") int delayBy) {
+                   @JsonProperty("throwException") boolean throwException,
+                   @JsonProperty("delayBy") int delayBy) {
         this.id = id;
         this.payload = payload;
         this.throwException = throwException;

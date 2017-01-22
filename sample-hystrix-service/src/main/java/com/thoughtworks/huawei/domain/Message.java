@@ -5,20 +5,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Message {
 
-    private final String id;
-    private final String payload;
+    private String id;
+    private String payload;
+    private boolean throwException;
+    private int delayBy = 0;
 
-    @JsonProperty("throw_exception")
-    private final boolean throwException;
-
-    @JsonProperty("delay_by")
-    private final int delayBy;
+    public Message() {
+        //
+    }
 
     @JsonCreator
     public Message(@JsonProperty("id") String id,
                    @JsonProperty("payload") String payload,
-                   @JsonProperty("throw_exception") boolean throwException,
-                   @JsonProperty("delay_by") int delayBy) {
+                   @JsonProperty("throwException") boolean throwException,
+                   @JsonProperty("delayBy") int delayBy) {
         this.id = id;
         this.payload = payload;
         this.throwException = throwException;
