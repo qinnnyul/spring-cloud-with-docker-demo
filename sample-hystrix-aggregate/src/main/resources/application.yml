@@ -15,8 +15,14 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
+      circuitBreaker:
+        requestVolumeThreshold: 4
+        sleepWindowInMilliseconds: 5000
     MessageHystrixCommand:
       execution:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
+      circuitBreaker:
+        requestVolumeThreshold: 4
+        sleepWindowInMilliseconds: 5000
