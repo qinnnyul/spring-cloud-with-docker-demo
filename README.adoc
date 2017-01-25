@@ -60,7 +60,6 @@ If all the applications have come up cleanly, the following endpoints are availa
 * Eureka endpoint at http://localhost:8761
 * Hystrix dashboard at http://localhost:8989/hystrix
 * Turbine stream which aggregates information from sample-hystrix-aggregate application at http://localhost:8989/turbine.stream?cluster=SAMPLE-HYSTRIX-AGGREGATE
-* A sample UI is available at http://localhost:8080
 
 On Docker
 ~~~~~~~~~
